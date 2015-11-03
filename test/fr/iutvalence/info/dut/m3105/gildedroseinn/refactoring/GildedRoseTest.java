@@ -23,7 +23,14 @@ public class GildedRoseTest
 		Item item = new Item("Free Hugs", 0, 1);
 		GildedRose.updateItem(item);
 		assertEquals(item.getQuality(), -1);
+		assertEquals(item.getSellIn(), -1);	
+	}
+	
+	@Test
+	public void isQualityAlwaysAboveZero(){
+		Item item = new Item("Free Hugs", 0, 1);
+		GildedRose.updateItem(item);
+		assertEquals(item.getQuality(), 0);
 		assertEquals(item.getSellIn(), -1);
-		
 	}
 }
