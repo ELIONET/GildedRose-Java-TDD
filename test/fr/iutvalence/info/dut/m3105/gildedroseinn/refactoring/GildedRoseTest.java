@@ -35,4 +35,11 @@ public class GildedRoseTest
 		assertEquals(item.getSellIn(), -1);
 	}
 	
+	@Test
+	public void doesAgedBrieQualityIncrease(){
+		Item agedBrie = new Item("Holy Aged Brie", 999, 10);
+		GildedRose.updateItem(agedBrie);
+		assertEquals(agedBrie.getQuality(), 11);
+		assertEquals(agedBrie.getSellIn(), 998);
+	}
 }
