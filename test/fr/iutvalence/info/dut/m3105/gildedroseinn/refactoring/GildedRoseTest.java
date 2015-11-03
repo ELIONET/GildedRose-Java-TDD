@@ -12,9 +12,18 @@ public class GildedRoseTest
 	public void testInitialAreSellInAndQualityReduced()
 	{
 		Item item = new Item("Lame du Roi Déchu", 3200, 4);
-		Item copyItem = item;
-		GildedRose.updateItem(copyItem);
-		assertEquals(item, copyItem);
+		GildedRose.updateItem(item);
+		assertEquals(item.getQuality(), 3);
+		assertEquals(item.getSellIn(), 3199);
 	}
 
+	@Test
+	public void isQualityReducedByTwoWhenSellInIsBelowZero()
+	{
+		Item item = new Item("Free Hugs", 0, 1);
+		GildedRose.updateItem(item);
+		assertEquals(item.getQuality(), -1);
+		assertEquals(item.getSellIn(), -1);
+		
+	}
 }

@@ -13,6 +13,7 @@ public class Item
 		this.setQuality(quality);
 	}
 
+
 	public String getName()
 	{
 		return this.name;
