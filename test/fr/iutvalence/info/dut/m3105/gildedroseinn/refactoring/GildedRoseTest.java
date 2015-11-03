@@ -22,8 +22,6 @@ public class GildedRoseTest
 	{
 		Item item = new Item("Free Hugs", 0, 1);
 		GildedRose.updateItem(item);
-		if(item.getSellIn()<0)
-			item.setQuality(item.getQuality()-1);
 		assertEquals(item.getQuality(), -1);
 		assertEquals(item.getSellIn(), -1);
 		
