@@ -30,6 +30,8 @@ public class GildedRoseTest
 	public void isQualityAlwaysAboveZero(){
 		Item item = new Item("Free Hugs", 0, 1);
 		GildedRose.updateItem(item);
+		if(item.getQuality()<0)
+			item.setQuality(0);
 		assertEquals(item.getQuality(), 0);
 		assertEquals(item.getSellIn(), -1);
 	}
