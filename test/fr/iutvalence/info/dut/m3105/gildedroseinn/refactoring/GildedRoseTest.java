@@ -22,7 +22,8 @@ public class GildedRoseTest
 	{
 		Item item = new Item("Free Hugs", 0, 1);
 		GildedRose.updateItem(item);
-		assertEquals(item.getQuality(), -1);
+		//The next test does the following line false.
+		//assertEquals(item.getQuality(), -1);
 		assertEquals(item.getSellIn(), -1);	
 	}
 	
@@ -30,9 +31,8 @@ public class GildedRoseTest
 	public void isQualityAlwaysAboveZero(){
 		Item item = new Item("Free Hugs", 0, 1);
 		GildedRose.updateItem(item);
-		if(item.getQuality()<0)
-			item.setQuality(0);
 		assertEquals(item.getQuality(), 0);
 		assertEquals(item.getSellIn(), -1);
 	}
+	
 }
